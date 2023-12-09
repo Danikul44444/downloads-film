@@ -1,10 +1,9 @@
 from bs4 import BeautifulSoup
 import requests
-import os
 import json
 from selenium import webdriver
 webBrowser = webdriver.Firefox()
-with open(fr'{os.getcwd()}\film.json', 'r', encoding="utf-8") as f:
+with open(f'film.json', 'r', encoding="utf-8") as f:
     data = json.load(f)
 
 for index in data:
