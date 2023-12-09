@@ -3,7 +3,7 @@ import requests
 import json
 from selenium import webdriver
 webBrowser = webdriver.Firefox()
-with open(f'film.json', 'r', encoding="utf-8") as f:
+with open('film.json', 'r', encoding="utf-8") as f:
     data = json.load(f)
 
 for index in data:
