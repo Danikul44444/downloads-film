@@ -2,7 +2,12 @@ from bs4 import BeautifulSoup
 import requests
 import json
 from selenium import webdriver
-webBrowser = webdriver.Firefox()
+path = input("Enter to the downloads path: ")
+profile = webdriver.FirefoxProfile()
+profile.set_preference("browser.download.dir", path)
+profile.set_preference("browser.download.folderList", 2)
+profile.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream")
+webBrowser = webdriver.Firefox(profile_firefox = profile)
 with open('film.json', 'r', encoding="utf-8") as f:
     data = json.load(f)
 
